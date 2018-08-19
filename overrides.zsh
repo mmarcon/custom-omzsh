@@ -3,6 +3,7 @@ alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias zshreload="source ~/.zshrc"
 alias v="vagrant"
+alias npmr="npm run $@"
 
 alias github='git -c user.name="Massimiliano Marcon" -c user.email="me@marcon.me"'
 
@@ -10,3 +11,7 @@ alias github='git -c user.name="Massimiliano Marcon" -c user.email="me@marcon.me
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:$GOPATH/bin
+
+## Functions
+function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
+
