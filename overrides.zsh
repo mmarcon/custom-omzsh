@@ -26,7 +26,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   custom_mongo dir vcs status
 )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    
+    ip
 )
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 # Add the custom Mongo icon prompt segment
