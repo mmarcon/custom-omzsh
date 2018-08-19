@@ -8,6 +8,7 @@ themes=$custom_omzsh/themes
 brew update
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
+brew install apparix
 
 # Create directories
 printf "creating directories => "
