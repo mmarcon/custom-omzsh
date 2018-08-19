@@ -1,3 +1,7 @@
+custom_omzsh=$HOME/.custom-omzsh
+plugins=$custom_omzsh/plugins
+themes=$custom_omzsh/themes
+
 # Aliases
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
@@ -30,4 +34,4 @@ POWERLEVEL9K_CUSTOM_MONGO="echo -n '\uE7A4'"
 POWERLEVEL9K_CUSTOM_MONGO_FOREGROUND="green"
 POWERLEVEL9K_CUSTOM_MONGO_BACKGROUND="black"
 
-source ~/.powerlevel9k/powerlevel9k.zsh-theme
+source $themes/powerlevel9k/powerlevel9k.zsh-theme

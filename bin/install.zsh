@@ -1,12 +1,13 @@
 #!/usr/bin/env zsh
 
+custom_omzsh=$HOME/.custom-omzsh
+plugins=$custom_omzsh/plugins
+themes=$custom_omzsh/themes
+
 # Nerd font
 brew update
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
-
-plugins=$HOME/.custom-omzsh/plugins
-themes=$HOME/.custom-omzsh/themes
 
 # Create directories
 printf "creating directories => "
@@ -36,5 +37,5 @@ if [[ -d $powerlevel9k ]]; then
 	popd
 else
 	printf "powerlevel9k is not installed, cloning from github => "
-	git clone git clone https://github.com/bhilburn/powerlevel9k.git $powerlevel9k &> /dev/null && printf "done\n" || "failed\n"
+	git clone https://github.com/bhilburn/powerlevel9k.git $powerlevel9k &> /dev/null && printf "done\n" || "failed\n"
 fi
