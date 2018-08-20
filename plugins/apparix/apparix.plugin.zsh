@@ -1,4 +1,4 @@
-function bookmark_help {
+bookmark_help () {
   echo "Usage: bt [NAME]"
   echo "Change directory to a bookmark\n"
 
@@ -6,19 +6,19 @@ function bookmark_help {
 }
 
 # list bookmarks
-function bookmark_list {
+bookmark_list () {
   echo "Available bookmarks: \n"
-  apparix | sed -n '4,$'p | uniq
+  apparix | sed -n '4,$'p | uniq | sed s/^j/•/
   echo ""
 }
 
 # bookmark a folder
-function bookmark_add {
+bookmark_add () {
   apparix --add-mark $1
 }
 
 # to bookmark
-function bookmark_to {
+bookmark_to () {
   if [[ $# -gt 0 ]]; then
     folder=$(apparix $1)
     cd $folder
@@ -28,9 +28,10 @@ function bookmark_to {
 }
 
 # delete bookmark
-function bookmark_delete {
+bookmark_delete () {
   if [[ $# -gt 0 ]]; then
-    apparix -purge-mark $1
+    apparix -purge-mark $1 2>/dev/null
+    echo "Bookmark $1 deleted"
     bookmark_list
   else
     bookmark_help
@@ -42,9 +43,6 @@ _bookmark_complete() {
   A=$(apparix | sed -n '4,$'p  | awk '{ print $2 }')
   _arguments ":::($A)"
 }
-
-# compdef _bookmark_complete bookmark_to
-# compdef _bookmark_complete bookmark_delete
 
 alias to=bookmark_to
 alias bl=bookmark_list

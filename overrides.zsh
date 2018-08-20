@@ -2,7 +2,7 @@
 # Custom plugins may be added to ~/.custom-omzsh/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git k macos nvm)
+plugins=(git k macos nvm apparix)
 
 custom_omzsh=$HOME/.custom-omzsh
 themes=$custom_omzsh/themes
