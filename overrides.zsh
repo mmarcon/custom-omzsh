@@ -28,6 +28,10 @@ function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Customise the Powerlevel9k prompts
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_DELIMITER="⋯"
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   custom_icon dir vcs status
 )
