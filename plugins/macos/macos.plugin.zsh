@@ -1,4 +1,4 @@
- () {
+macos () {
 	case "$1" in
 		"clean:downloads")
 			clean_downloads
