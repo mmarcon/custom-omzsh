@@ -36,7 +36,7 @@ else
 	git clone https://github.com/supercrabtree/k $k &> /dev/null && printf "done\n" || "failed\n"
 fi
 
-# powerlevel9k (https://github.com/bhilburn/powerlevel9k.git)
+# powerlevel9k (https://github.com/bhilburn/powerlevel9k)
 powerlevel9k=$themes/powerlevel9k
 if [[ -d $powerlevel9k ]]; then
 	pushd $powerlevel9k
