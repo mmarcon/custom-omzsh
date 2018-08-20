@@ -3,12 +3,19 @@
 custom_omzsh=$HOME/.custom-omzsh
 plugins=$custom_omzsh/plugins
 themes=$custom_omzsh/themes
+system=$custom_omzsh/system
 
-# Nerd font
+# Oh-My-Zsh (https://github.com/robbyrussell/oh-my-zsh)
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Brew stuff
 brew update
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 brew install apparix
+
+#Install NVM (https://github.com/creationix/nvm)
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
 
 # Create directories
 printf "creating directories => "
@@ -40,3 +47,6 @@ else
 	printf "powerlevel9k is not installed, cloning from github => "
 	git clone https://github.com/bhilburn/powerlevel9k.git $powerlevel9k &> /dev/null && printf "done\n" || "failed\n"
 fi
+
+# copy files into the system
+cp system/zshrc $HOME/.zshrc
