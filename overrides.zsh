@@ -6,6 +6,7 @@ plugins=(git k macos nvm)
 
 custom_omzsh=$HOME/.custom-omzsh
 themes=$custom_omzsh/themes
+icon_override=$HOME/.icon
 
 # Aliases
 alias zshconfig="code ~/.zshrc"
@@ -35,8 +36,12 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
 )
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 # Add the custom Mongo icon prompt segment
-POWERLEVEL9K_CUSTOM_MONGO="echo -n '\uE7A4'"
-POWERLEVEL9K_CUSTOM_MONGO_FOREGROUND="green"
+POWERLEVEL9K_CUSTOM_MONGO="echo -n '\uF0FC'"
+POWERLEVEL9K_CUSTOM_MONGO_FOREGROUND="yellow"
 POWERLEVEL9K_CUSTOM_MONGO_BACKGROUND="black"
+
+if [[ -f $icon_override ]]; then
+  source "$icon_override"
+fi
 
 source $themes/powerlevel9k/powerlevel9k.zsh-theme
