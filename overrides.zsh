@@ -29,16 +29,16 @@ POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  custom_mongo dir vcs status
+  custom_icon dir vcs status
 )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     ip
 )
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-# Add the custom Mongo icon prompt segment
-POWERLEVEL9K_CUSTOM_MONGO="echo -n '\uF0FC'"
-POWERLEVEL9K_CUSTOM_MONGO_FOREGROUND="yellow"
-POWERLEVEL9K_CUSTOM_MONGO_BACKGROUND="black"
+# Add the custom prompt icon segment
+POWERLEVEL9K_CUSTOM_ICON="echo -n '\uF0FC'"
+POWERLEVEL9K_CUSTOM_ICON_FOREGROUND="yellow"
+POWERLEVEL9K_CUSTOM_ICON_BACKGROUND="black"
 
 if [[ -f $icon_override ]]; then
   source "$icon_override"
