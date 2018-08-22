@@ -47,6 +47,9 @@ export ZSH=/Users/mmarcon/.oh-my-zsh
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$HOME/.custom-omzsh
 
+# Load plugins config
+source $ZSH_CUSTOM/plugins.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
