@@ -10,4 +10,10 @@ ver() {
     node_icon="\uf898"
     node_icon_color=$fg[green]
     echo "${node_icon_color}${node_icon}${reset_color} Node.js: ${node_version}"
+
+    # Git
+    git_version=$(git --version | cut -d" " -f 3)
+    git_icon="\uf7a1"
+    git_icon_color=$fg[red]
+    echo "${git_icon_color}${git_icon}${reset_color} Git: ${git_version}"
 }
