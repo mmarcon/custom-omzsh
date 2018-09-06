@@ -24,6 +24,10 @@ fi
 if ask "Do you want to install git?"; then
 	brew install git
 fi
+# Bat (https://github.com/sharkdp/bat)
+if ask "Do you want to install bat?"; then
+	brew install bat
+fi
 
 #Install NVM (https://github.com/creationix/nvm)
 if ask "Do you want to install nvm?"; then
