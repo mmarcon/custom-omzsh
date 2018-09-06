@@ -8,6 +8,7 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 alias zshreload="source ~/.zshrc"
 alias v="vagrant"
 alias npmr="npm run $@"
+alias cat="bat"
 
 alias github='git -c user.name="Massimiliano Marcon" -c user.email="me@marcon.me"'
 
