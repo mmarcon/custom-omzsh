@@ -9,6 +9,8 @@ alias zshreload="source ~/.zshrc"
 alias v="vagrant"
 alias npmr="npm run $@"
 alias cat="bat"
+alias ci="code-insiders $@"
+alias mongosh="NODE_PATH=$HOME/.mongodb/mongosh/global_modules/node_modules mongosh $@"
 
 alias github='git -c user.name="Massimiliano Marcon" -c user.email="me@marcon.me"'
 
