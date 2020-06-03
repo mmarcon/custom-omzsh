@@ -10,7 +10,11 @@ alias v="vagrant"
 alias npmr="npm run $@"
 alias cat="bat"
 alias ci="code-insiders $@"
-alias mongosh="NODE_PATH=$HOME/.mongodb/mongosh/global_modules/node_modules mongosh $@"
+
+mongoshells=('mongosh' 'mongosh.master')
+for mongoshell in $mongoshells; do
+  alias ${mongoshell}="NODE_PATH=$HOME/.mongodb/mongosh/global_modules/node_modules ${mongoshell} $@"
+done
 
 alias github='git -c user.name="Massimiliano Marcon" -c user.email="me@marcon.me"'
 
