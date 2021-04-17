@@ -11,9 +11,9 @@ alias npmr="npm run $@"
 alias cat="bat"
 alias ci="code-insiders $@"
 
-mongoshells=('mongosh' 'mongosh.master')
+mongoshells=('mongosh' 'mongosh.dev' 'mongosh.bin' 'mongosh.brew')
 for mongoshell in $mongoshells; do
-  alias ${mongoshell}="NODE_PATH=$HOME/.mongodb/mongosh/global_modules/node_modules ${mongoshell} $@"
+  alias ${mongoshell}="NODE_PATH=$HOME/.mongodb/mongosh/global_modules/node_modules MONGOSH_ASYNC_REWRITER2=1 ${mongoshell} $@"
 done
 
 alias github='git -c user.name="Massimiliano Marcon" -c user.email="me@marcon.me"'
@@ -26,28 +26,20 @@ export PATH=$PATH:$GOPATH/bin
 ## Functions
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
 
-POWERLEVEL9K_MODE='nerdfont-complete'
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# Customise the Powerlevel9k prompts
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_DELIMITER="⋯"
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
+# source $themes/powerlevel10k/powerlevel10k.zsh-theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  custom_icon dir vcs status
-)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    command_execution_time ip
-)
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-# Add the custom prompt icon segment
-POWERLEVEL9K_CUSTOM_ICON="echo -n '\uF0FC'"
-POWERLEVEL9K_CUSTOM_ICON_FOREGROUND="yellow"
-POWERLEVEL9K_CUSTOM_ICON_BACKGROUND="black"
+# OS identifier color.
+export ICON_FOREGROUND="yellow"
+# Custom icon.
+export ICON_CONTENT_EXPANSION=$'\uF0FC'
 
 if [[ -f $icon_override ]]; then
   source "$icon_override"
 fi
 
-source $themes/powerlevel9k/powerlevel9k.zsh-theme
+[[ ! -f $custom_omzsh/p10k.zsh ]] || source $custom_omzsh/p10k.zsh

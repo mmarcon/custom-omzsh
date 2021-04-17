@@ -1,2 +1,4 @@
 plugins/k
 themes/powerlevel9k
+themes/powerlevel10k
+plugins/mongodb
