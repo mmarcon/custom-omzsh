@@ -62,7 +62,7 @@ if [[ -d $powerlevel9k ]]; then
 	popd
 else
 	printf "powerlevel9k is not installed, cloning from github => "
-	git clone https://github.com/bhilburn/powerlevel9k.git $powerlevel9k &> /dev/null && printf "done\n" || "failed\n"
+	git clone git@github.com:romkatv/powerlevel10k.git $powerlevel9k &> /dev/null && printf "done\n" || "failed\n"
 fi
 
 # powerlevel10k (https://github.com/bhilburn/powerlevel10k)
@@ -74,7 +74,7 @@ if [[ -d $powerlevel10k ]]; then
 	popd
 else
 	printf "powerlevel10k is not installed, cloning from github => "
-	git clone https://github.com/bhilburn/powerlevel10k.git $powerlevel10k &> /dev/null && printf "done\n" || "failed\n"
+	git clone git@github.com:romkatv/powerlevel10k.git $powerlevel10k &> /dev/null && printf "done\n" || "failed\n"
 fi
 
 #Install MongoDB completions (https://github.com/JamesKovacs/zsh_completions_mongodb#zsh_completions_mongodb)
