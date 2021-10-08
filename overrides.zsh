@@ -18,10 +18,13 @@ done
 
 alias github='git -c user.name="Massimiliano Marcon" -c user.email="me@marcon.me"'
 
-#Go
+# Go
 export GOPATH=$HOME/dev/go
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export PATH=$PATH:$GOPATH/bin
+
+# Variables
+export EDITOR=vim
 
 ## Functions
 function gi() { curl -L -s https://www.gitignore.io/api/$@ ;}
