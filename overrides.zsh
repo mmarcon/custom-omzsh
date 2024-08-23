@@ -6,7 +6,6 @@ icon_override=$HOME/.icon
 alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias zshreload="source ~/.zshrc"
-alias v="vagrant"
 alias npmr="npm run $@"
 alias cat="bat"
 alias ci="code-insiders $@"
@@ -17,6 +16,9 @@ for mongoshell in $mongoshells; do
 done
 
 alias github='git -c user.name="Massimiliano Marcon" -c user.email="me@marcon.me"'
+
+# Path
+export PATH=$PATH:$HOME/.bin
 
 # Go
 export GOPATH=$HOME/dev/go
